@@ -1,8 +1,6 @@
 import py_compile
 import dis
 if __name__ == "__main__":
-    py_compile.compile('hidden_4.py')
-
     with open('hidden_4.pyc', 'rb') as compiled_file:
         code = compiled_file.read()
 
