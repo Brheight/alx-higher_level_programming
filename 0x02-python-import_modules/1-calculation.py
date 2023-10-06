@@ -4,17 +4,12 @@ a = 10
 b= 5
 if __name__ == "__main__":
     
-    add_result = add(a, b)
-    sub_result = sub(a, b)
-    mul_result = mul(a, b)
-    div_result = div(a, b)
+    result_add = add(a, b)
+    result_sub = sub(a, b)
+    result_mul = mul(a, b)
+    result_div = div(a, b)
 
-    operations = {
-        "add": add_result,
-        "sub": sub_result,
-        "mul": mul_result,
-        "div": div_result
-    }
-
-    for operation, result in operations.items():
-        print(f"{a} {operation} {b} = {result}")
+    print(f"{a} + {b} = {result_add}")
+    print(f"{a} - {b} = {result_sub}")
+    print(f"{a} * {b} = {result_mul}")
+    print(f"{a} / {b} = {result_div}")
