@@ -3,7 +3,6 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
-    # Check the number of arguments
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
@@ -12,7 +11,6 @@ if __name__ == "__main__":
     operator = sys.argv[2]
     b = int(sys.argv[3])
 
-    # Perform the appropriate operation based on the operator
     if operator == '+':
         result = add(a, b)
     elif operator == '-':
