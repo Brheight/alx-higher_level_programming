@@ -1,13 +1,6 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
-
-    for row in matrix:
-        new_row = []
-        for element in row:
-            new_row.append(element ** 2)
-        new_matrix.append(new_row)
-
+    new_matrix = [[element ** 2 for element in row] for row in matrix]
     return new_matrix
 
 matrix = [
@@ -17,5 +10,5 @@ matrix = [
 ]
 
 new_matrix = square_matrix_simple(matrix)
-print(new_matrix)
-print(matrix)
+#print(new_matrix)
+#print(matrix)
