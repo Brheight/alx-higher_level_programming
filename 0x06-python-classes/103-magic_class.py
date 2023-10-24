@@ -1,4 +1,6 @@
 import math
+"""103-square"""
+
 
 class MagicClass:
     def __init__(self, radius=0):

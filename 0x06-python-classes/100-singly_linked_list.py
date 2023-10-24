@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""100-singlw"""
+
 
 class Node:
     """

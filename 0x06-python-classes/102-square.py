@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""102-square"""
+
 
 class Square:
     """
