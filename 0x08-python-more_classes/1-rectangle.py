@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Rectangle"""
 
 
@@ -73,3 +74,15 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def to_dictionary(self):
+        """
+        Returns a dictionary representation of the Rectangle with "height" appearing before "width."
+
+        Returns:
+            dict: A dictionary with attribute names and their values.
+        """
+        return {
+            'height': self.__height,
+            'width': self.__width
+        }
