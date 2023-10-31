@@ -118,7 +118,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(['#' * self.__width for _ in range(self.__height)]
+        return "\n".join(['#' * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """
@@ -135,13 +135,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-if __name__ == "__main__":
-    my_rectangle_1 = Rectangle(2, 4)
-    print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-    my_rectangle_2 = Rectangle(2, 4)
-    print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-    del my_rectangle_1
-    print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-    del my_rectangle_2
-    print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
