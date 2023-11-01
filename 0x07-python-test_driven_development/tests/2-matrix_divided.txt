@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+"""
+This is the test file for the "matrix_divided" function.
+
+It performs various test cases to verify the correctness of the function.
+"""
+
+import doctest
+import os
+
+if __name__ == "__main__":
+    import sys
+
+    # Add the current directory to sys.path
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+    from 2-matrix_divided import matrix_divided
+
+    # Examples
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6]
+    ]
+    print(matrix_divided(matrix, 3))
+    # Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    # Additional test cases
+    doctest.testfile("tests/2-matrix_divided.txt")
