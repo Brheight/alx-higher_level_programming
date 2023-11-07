@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+import json
+import os
+import sys
+import importlib.util
+
+def test():
+    try:
+        spec = importlib.util.spec_from_file_location("7-base_geometry", "7-base_geometry.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        bg = mod.BaseGeometry()
+
+        try:
+            bg.integer_validator("my_int", 12)
+        except Exception as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+
+        try:
+            bg.integer_validator("width", 89)
+        except Exception as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+
+        try:
+            bg.integer_validator("name", "John")
+        except Exception as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+
+        try:
+            bg.integer_validator("age", 0)
+        except Exception as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+
+        try:
+            bg.integer_validator("distance", -4)
+        except Exception as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+        
+    except Exception as e:
+        print(e)
+
+if __name__ == '__main__':
+    test()
