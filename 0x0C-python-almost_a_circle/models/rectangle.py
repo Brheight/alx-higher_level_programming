@@ -79,11 +79,23 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """ Display the Rectangle instance using '#' """
+        """ Display the Rectangle instance using '#' with x and y offset """
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
 
     def __str__(self):
         """ Override __str__ method to return a formatted string """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ Update attributes with the values in *args and **kwargs """
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
