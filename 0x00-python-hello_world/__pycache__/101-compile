@@ -10,19 +10,16 @@ if [ ! -f "$PYFILE" ]; then
     exit 1
 fi
 
-# Get the base name of the script file
-script_name=$(basename "$PYFILE")
-
-# Compile the Python script and save it in the same directory
-output_file="${script_name}c"
+# Compile the Python script
 python3 -m py_compile "$PYFILE"
-mv "__pycache__/$script_name.cpython-*.pyc" "$output_file"
 
 if [ $? -eq 0 ]; then
     echo "Compiling $PYFILE ..."
-
-    if [ -f "$output_file" ]; then
-        echo "Compiled file $output_file found."
+    
+    # Check if the compiled file exists in the __pycache__ directory
+    pyc_file="$PYFILE"*.pyc
+    if [ -f "$pyc_file" ]; then
+        echo "Compiled file $pyc_file found."
     else
         echo "Error: Compiled file not found."
     fi
