@@ -6,4 +6,4 @@ if (arg) {
   console.log(arg);
 } else {
   console.log("No argument");
-}
+};
