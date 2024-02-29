@@ -6,6 +6,6 @@ fs.writeFile(filePath, content, 'utf-8', (error) => {
   if (error) {
     console.error(error);
     return;
-  }  
+  } else {
   console.log('The file has been saved!');
-});
+  }});
